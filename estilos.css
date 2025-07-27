@@ -1,1 +1,139 @@
+/* ---- VARIABLES Y ESTILOS GLOBALES ---- */
+:root {
+    --color-fondo: #f8f7ff;
+    --color-texto: #333;
+    --color-ramo-default: #ffffff;
+    --color-ramo-borde: #e0d9ff;
+    --color-ramo-aprobado: #d946ef; /* Morado-Rosa Fuerte */
+    --color-ramo-aprobado-texto: #ffffff;
+    --color-ramo-bloqueado: #e9e9e9;
+    --color-ramo-bloqueado-texto: #a0a0a0;
+    --color-sombra: rgba(131, 82, 255, 0.1);
+    --fuente-principal: 'Poppins', sans-serif;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ---- CONTENEDOR PRINCIPAL Y ENCABEZADO ---- */
+.malla-container {
+    max-width: 1600px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-weight: 600;
+    color: #8b5cf6; /* Morado Principal */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    color: #6d6d6d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ---- GRID DE LA MALLA ---- */
+#malla-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.semestre {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.semestre h3 {
+    font-weight: 600;
+    color: #a855f7; /* Morado Secundario */
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-ramo-borde);
+}
+
+/* ---- ESTILOS DE LOS RAMOS ---- */
+.ramo {
+    background-color: var(--color-ramo-default);
+    border: 1px solid var(--color-ramo-borde);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--color-sombra);
+    user-select: none; /* Evita que el texto se seleccione al hacer clic */
+}
+
+.ramo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(131, 82, 255, 0.2);
+}
+
+/* ---- ESTADOS DE LOS RAMOS ---- */
+.ramo.aprobado {
+    background-color: var(--color-ramo-aprobado);
+    color: var(--color-ramo-aprobado-texto);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    border-color: #c026d3;
+}
+
+.ramo.bloqueado {
+    background-color: var(--color-ramo-bloqueado);
+    color: var(--color-ramo-bloqueado-texto);
+    border-color: #d4d4d4;
+    cursor: not-allowed;
+}
+
+.ramo.bloqueado:hover {
+    transform: none;
+    box-shadow: 0 4px 12px var(--color-sombra);
+}
+
+/* ---- DISEÑO RESPONSIVO ---- */
+@media (max-width: 768px) {
+    .malla-container {
+        margin: 1rem;
+    }
+    
+    #malla-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .ramo {
+        padding: 0.8rem;
+        font-size: 0.8rem;
+    }
+}
