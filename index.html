@@ -1,1 +1,121 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="malla-container">
+        <header>
+            <h1>Malla Curricular de Medicina Veterinaria 🩺🐾</h1>
+            <p>Haz clic en un ramo para marcarlo como aprobado. Los ramos se desbloquearán a medida que cumplas sus requisitos.</p>
+        </header>
+
+        <main id="malla-grid">
+            <div class="semestre">
+                <h3>Semestre 1</h3>
+                <div class="ramo" data-id="bio-cel" data-nombre="Biología Celular y Molecular" data-requisitos="">Biología Celular y Molecular</div>
+                <div class="ramo" data-id="quim-int" data-nombre="Química Integrada" data-requisitos="">Química Integrada</div>
+                <div class="ramo" data-id="mates" data-nombre="Matemáticas" data-requisitos="">Matemáticas</div>
+                <div class="ramo" data-id="intro-vet" data-nombre="Introducción a la Medicina Veterinaria" data-requisitos="">Introducción a la Medicina Veterinaria</div>
+                <div class="ramo" data-id="ser-las" data-nombre="Ser Lasallista" data-requisitos="">Ser Lasallista</div>
+                <div class="ramo" data-id="lect-esc" data-nombre="Técnicas de Lectura y Escritura" data-requisitos="">Técnicas de Lectura y Escritura</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 2</h3>
+                <div class="ramo" data-id="form-hum1" data-nombre="Formación Humana (electiva)" data-requisitos="">Formación Humana (electiva)</div>
+                <div class="ramo" data-id="ecologia" data-nombre="Ecología" data-requisitos="">Ecología</div>
+                <div class="ramo" data-id="bioquim" data-nombre="Bioquímica Aplicada" data-requisitos="quim-int">Bioquímica Aplicada</div>
+                <div class="ramo" data-id="histo" data-nombre="Histología y Embriología" data-requisitos="bio-cel">Histología y Embriología</div>
+                <div class="ramo" data-id="anato1" data-nombre="Anatomía" data-requisitos="bio-cel">Anatomía</div>
+                <div class="ramo" data-id="bioest" data-nombre="Bioestadística" data-requisitos="mates">Bioestadística</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 3</h3>
+                <div class="ramo" data-id="inmuno" data-nombre="Inmunología" data-requisitos="bio-cel">Inmunología</div>
+                <div class="ramo" data-id="micro" data-nombre="Microbiología" data-requisitos="bio-cel">Microbiología</div>
+                <div class="ramo" data-id="anato2" data-nombre="Anatomía II" data-requisitos="anato1">Anatomía II</div>
+                <div class="ramo" data-id="met-inv" data-nombre="Metodología de la Investigación" data-requisitos="lect-esc">Metodología de la Investigación</div>
+                <div class="ramo" data-id="form-hum2" data-nombre="Formación Humana (electiva)" data-requisitos="">Formación Humana (electiva)</div>
+                <div class="ramo" data-id="biofis" data-nombre="Biofísica" data-requisitos="mates">Biofísica</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 4</h3>
+                <div class="ramo" data-id="fisio1" data-nombre="Fisiología" data-requisitos="anato1,bioquim">Fisiología</div>
+                <div class="ramo" data-id="admin" data-nombre="Principios de la Administración" data-requisitos="">Principios de la Administración</div>
+                <div class="ramo" data-id="genetica" data-nombre="Genética Animal" data-requisitos="bio-cel">Genética Animal</div>
+                <div class="ramo" data-id="parasito" data-nombre="Parasitología" data-requisitos="micro">Parasitología</div>
+                <div class="ramo" data-id="dis-exp" data-nombre="Diseño de Experimentos" data-requisitos="bioest">Diseño de Experimentos</div>
+                <div class="ramo" data-id="ext-rural" data-nombre="Extensión rural" data-requisitos="">Extensión rural</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 5</h3>
+                <div class="ramo" data-id="fisio2" data-nombre="Fisiología II" data-requisitos="fisio1">Fisiología II</div>
+                <div class="ramo" data-id="nutricion" data-nombre="Nutrición Animal" data-requisitos="bioquim">Nutrición Animal</div>
+                <div class="ramo" data-id="epidemio" data-nombre="Epidemiología" data-requisitos="bioest">Epidemiología</div>
+                <div class="ramo" data-id="pato1" data-nombre="Patología I" data-requisitos="histo,anato2">Patología I</div>
+                <div class="ramo" data-id="electiva1" data-nombre="Electiva Profesional" data-requisitos="">Electiva Profesional</div>
+                <div class="ramo" data-id="etologia" data-nombre="Etología y Bienestar Animal" data-requisitos="">Etología y Bienestar Animal</div>
+            </div>
+            
+            <div class="semestre">
+                <h3>Semestre 6</h3>
+                <div class="ramo" data-id="semio" data-nombre="Semiología Veterinaria" data-requisitos="fisio2,pato1">Semiología Veterinaria</div>
+                <div class="ramo" data-id="fisio-repro" data-nombre="Fisiología de la Reproducción" data-requisitos="fisio2">Fisiología de la Reproducción</div>
+                <div class="ramo" data-id="pato2" data-nombre="Patología II" data-requisitos="pato1">Patología II</div>
+                <div class="ramo" data-id="farmaco" data-nombre="Farmacología" data-requisitos="fisio2,bioquim">Farmacología</div>
+                <div class="ramo" data-id="electiva2" data-nombre="Electiva Profesional" data-requisitos="">Electiva Profesional</div>
+                <div class="ramo" data-id="inocuidad" data-nombre="Seguridad e Inocuidad Alimentaria" data-requisitos="">Seguridad e Inocuidad Alimentaria</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 7</h3>
+                <div class="ramo" data-id="repro-biotec" data-nombre="Reproducción y Biotecnología Animal" data-requisitos="fisio-repro">Reproducción y Biotecnología Animal</div>
+                <div class="ramo" data-id="salud-pub" data-nombre="Salud Pública" data-requisitos="epidemio">Salud Pública</div>
+                <div class="ramo" data-id="pato-clin" data-nombre="Patología Clínica" data-requisitos="pato2">Patología Clínica</div>
+                <div class="ramo" data-id="imagen" data-nombre="Imagenología" data-requisitos="anato2">Imagenología</div>
+                <div class="ramo" data-id="electiva3" data-nombre="Electiva Profesional" data-requisitos="">Electiva Profesional</div>
+                <div class="ramo" data-id="toxico" data-nombre="Toxicología" data-requisitos="farmaco">Toxicología</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 8</h3>
+                <div class="ramo" data-id="clin-peq1" data-nombre="Clínica Médica de Pequeñas Especies I" data-requisitos="semio,pato-clin,farmaco">Clínica Médica de Pequeñas Especies I</div>
+                <div class="ramo" data-id="clin-equ1" data-nombre="Clínica Médica de Equinos I" data-requisitos="semio,pato-clin,farmaco">Clínica Médica de Equinos I</div>
+                <div class="ramo" data-id="clin-rum" data-nombre="Clínica Médica de Rumiantes" data-requisitos="semio,pato-clin,farmaco">Clínica Médica de Rumiantes</div>
+                <div class="ramo" data-id="gestion" data-nombre="Gestión Contable y Financiera" data-requisitos="admin">Gestión Contable y Financiera</div>
+                <div class="ramo" data-id="cirugia1" data-nombre="Cirugía I" data-requisitos="semio">Cirugía I</div>
+                <div class="ramo" data-id="deonto" data-nombre="Deontología y Bioética Profesional" data-requisitos="">Deontología y Bioética Profesional</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 9</h3>
+                <div class="ramo" data-id="clin-peq2" data-nombre="Clínica Médica de Pequeñas Especies II" data-requisitos="clin-peq1">Clínica Médica de Pequeñas Especies II</div>
+                <div class="ramo" data-id="clin-equ2" data-nombre="Clínica Médica de Equinos II" data-requisitos="clin-equ1">Clínica Médica de Equinos II</div>
+                <div class="ramo" data-id="clin-por" data-nombre="Clínica Médica de Porcinos" data-requisitos="semio,pato-clin">Clínica Médica de Porcinos</div>
+                <div class="ramo" data-id="med-aviar" data-nombre="Medicina Aviar" data-requisitos="semio,pato-clin">Medicina Aviar</div>
+                <div class="ramo" data-id="cirugia2" data-nombre="Cirugía II" data-requisitos="cirugia1">Cirugía II</div>
+                <div class="ramo" data-id="proyectos" data-nombre="Formulación y Evaluación de Proyectos" data-requisitos="gestion">Formulación y Evaluación de Proyectos</div>
+            </div>
+
+            <div class="semestre">
+                <h3>Semestre 10</h3>
+                <div class="ramo" data-id="grado" data-nombre="Trabajo de grado" data-requisitos="proyectos">Trabajo de grado</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
